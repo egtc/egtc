@@ -1,0 +1,7 @@
+<index-page>
+  <collection: replace>
+ 	<table-plus with="&@grades" fields="name, term, course_name, course_code, course_level, grade">
+     <empty-message:>No grades match your criteria</empty-message:>
+   </table-plus>
+   </collection:>
+</index-page>

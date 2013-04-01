@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130401052657) do
+ActiveRecord::Schema.define(:version => 20130401062634) do
 
   create_table "colleges", :force => true do |t|
     t.string   "name"
@@ -32,12 +32,34 @@ ActiveRecord::Schema.define(:version => 20130401052657) do
 
   add_index "courses", ["program_id"], :name => "index_courses_on_program_id"
 
+  create_table "grades", :force => true do |t|
+    t.string   "snumber"
+    t.string   "term"
+    t.string   "course_name"
+    t.string   "section_number"
+    t.string   "grade_definition"
+    t.string   "grade"
+    t.float    "credit_hours"
+    t.string   "course_code"
+    t.string   "course_level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
+
   create_table "programs", :force => true do |t|
     t.string   "title"
-    t.integer  "courses_count", :default => 0, :null => false
+    t.integer  "courses_count",   :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "college_id"
+    t.integer  "headcount_2011"
+    t.integer  "headcount_2012"
+    t.integer  "headcount_2013"
+    t.float    "fall_2012_fte"
+    t.float    "spring_2013_fte"
+    t.float    "summer_2013_fte"
+    t.float    "fte_2013"
   end
 
   add_index "programs", ["college_id"], :name => "index_programs_on_college_id"

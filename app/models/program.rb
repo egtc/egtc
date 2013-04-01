@@ -5,6 +5,13 @@ class Program < ActiveRecord::Base
   fields do
     title :string
     courses_count :integer, :default => 0, :null => false
+    headcount_2011 :integer 
+    headcount_2012 :integer 
+    headcount_2013 :integer 
+    fall_2012_fte :float 
+    spring_2013_fte :float 
+    summer_2013_fte :float 
+    fte_2013 :float
     timestamps
   end
   attr_accessible :title, :college, :college_id, :courses
