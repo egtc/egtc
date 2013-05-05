@@ -6,9 +6,9 @@ class GradesController < ApplicationController
   
   def show
     @grades = find_instance
-      search(params[:search], :snumber).
+      search(params[:search], :name).
       order_by(parse_sort_param(:name))
-    hobo_index
+    hobo_show
   end
 
 

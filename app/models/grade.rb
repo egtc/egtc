@@ -12,6 +12,7 @@ class Grade < ActiveRecord::Base
     credit_hours     :float
     course_code      :string
     course_level     :string
+    source           :string
     timestamps
   end
   attr_accessible :name, :term, :course_name, :section_number, :grade_definition, :grade, :credit_hours, :course_code, :course_level

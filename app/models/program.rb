@@ -14,7 +14,7 @@ class Program < ActiveRecord::Base
     fte_2013 :float
     timestamps
   end
-  attr_accessible :title, :college, :college_id, :courses
+  attr_accessible :title, :college, :college_id, :courses, :headcount_2013, :fall_2013_fte, :spring_2013_fte, :summer_2013_fte, :fte_2013
   belongs_to :college, :inverse_of => :programs, :counter_cache => true
   has_many :courses, :dependent => :destroy, :inverse_of => :program
   children :courses
