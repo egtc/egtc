@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505180439) do
+ActiveRecord::Schema.define(:version => 20130506054540) do
 
   create_table "colleges", :force => true do |t|
     t.string   "name"
@@ -48,72 +48,21 @@ ActiveRecord::Schema.define(:version => 20130505180439) do
     t.string   "source"
   end
 
-  create_table "ipeds_stage", :id => false, :force => true do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "ssn"
-    t.string "student_number"
-    t.string "gender"
-    t.string "c_f_hispanic_yes_no"
-    t.string "c_f_race"
-    t.string "hispanic_yes_no"
-    t.string "race"
-    t.string "birth_country"
-    t.string "country_of_citizenship"
-    t.string "visa_type"
-    t.string "residency_status"
-    t.string "hb_1023"
-    t.string "visa_perm_residence_card"
-    t.string "alien_registration_number"
-    t.string "visa_issue_date"
-    t.string "visa_exp_date"
-    t.string "affidavit"
-    t.string "approved_by_save"
-    t.string "enrollment_code"
-    t.string "student_attributes"
-    t.string "concurrent_enrollment_school"
-    t.string "birth_date"
-    t.string "age"
-    t.string "course_code"
-    t.string "course_name"
-    t.string "course_section"
-    t.string "course_section_id"
-    t.string "course_enrollment_term"
-    t.string "program"
-    t.string "program_enrollment_term"
-    t.string "credit_hour"
-    t.string "course_start_date"
-    t.string "course_end_date"
-    t.string "student_start_date"
-    t.string "student_expected_end_date"
-    t.string "finalized_date"
-    t.string "finalized_grade"
-    t.string "enrollment_code_2"
-    t.string "high_school_diploma_date"
-    t.string "ged_date"
-    t.string "highest_education_level"
-    t.string "higher_ed_tp_1"
-    t.string "higher_ed_tp_2"
-    t.string "enrollment_status"
-  end
-
-  add_index "ipeds_stage", ["enrollment_status"], :name => "enrollment_status"
-  add_index "ipeds_stage", ["program"], :name => "program"
-  add_index "ipeds_stage", ["student_number"], :name => "student_number"
-
   create_table "programs", :force => true do |t|
     t.string   "title"
-    t.integer  "courses_count",   :default => 0, :null => false
+    t.integer  "courses_count",                :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "college_id"
     t.integer  "headcount_2011"
     t.integer  "headcount_2012"
     t.integer  "headcount_2013"
-    t.float    "fall_2012_fte"
-    t.float    "spring_2013_fte"
-    t.float    "summer_2013_fte"
-    t.float    "fte_2013"
+    t.float    "fall_2012_fte",   :limit => 6
+    t.float    "spring_2013_fte", :limit => 6
+    t.float    "summer_2013_fte", :limit => 6
+    t.float    "fte_2013",        :limit => 8
+    t.integer  "withdrawals"
+    t.integer  "graduates"
   end
 
   add_index "programs", ["college_id"], :name => "index_programs_on_college_id"

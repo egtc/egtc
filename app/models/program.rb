@@ -12,9 +12,11 @@ class Program < ActiveRecord::Base
     spring_2013_fte :float 
     summer_2013_fte :float 
     fte_2013 :float
+    withdrawals :integer
+    graduates :integer
     timestamps
   end
-  attr_accessible :title, :college, :college_id, :courses, :headcount_2013, :fall_2013_fte, :spring_2013_fte, :summer_2013_fte, :fte_2013
+  attr_accessible :title, :college, :college_id, :courses, :headcount_2013, :fall_2013_fte, :spring_2013_fte, :summer_2013_fte, :fte_2013, :withdrawals, :graduates
   belongs_to :college, :inverse_of => :programs, :counter_cache => true
   has_many :courses, :dependent => :destroy, :inverse_of => :program
   children :courses
