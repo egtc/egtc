@@ -16,7 +16,7 @@ class Grade < ActiveRecord::Base
     timestamps
   end
   attr_accessible :name, :term, :course_name, :section_number, :grade_definition, :grade, :credit_hours, :course_code, :course_level
-
+  belongs_to :student
   # --- Permissions --- #
 
   def create_permitted?

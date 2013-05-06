@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130506054540) do
+ActiveRecord::Schema.define(:version => 20130506215324) do
 
   create_table "colleges", :force => true do |t|
     t.string   "name"
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20130506054540) do
   add_index "courses", ["program_id"], :name => "index_courses_on_program_id"
 
   create_table "grades", :force => true do |t|
-    t.text     "snumber",          :limit => 2147483647
     t.string   "term"
     t.string   "course_name"
     t.string   "section_number"
@@ -46,7 +45,10 @@ ActiveRecord::Schema.define(:version => 20130506054540) do
     t.datetime "updated_at"
     t.string   "name"
     t.string   "source"
+    t.integer  "student_id"
   end
+
+  add_index "grades", ["student_id"], :name => "index_grades_on_student_id"
 
   create_table "programs", :force => true do |t|
     t.string   "title"
@@ -72,6 +74,22 @@ ActiveRecord::Schema.define(:version => 20130506054540) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "colleges_count", :default => 0, :null => false
+  end
+
+  create_table "students", :force => true do |t|
+    t.string   "student_number"
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "last_name"
+    t.string   "race"
+    t.string   "ethnicity"
+    t.string   "nationality"
+    t.string   "origin_country"
+    t.string   "gender"
+    t.string   "dob"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "users", :force => true do |t|
