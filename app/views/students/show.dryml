@@ -2,7 +2,9 @@
 <field-list: columns="4"/>
   <collection: replace>
   <table-plus with="&@grades" fields="this, term, course_code, course_level, course_name, section_number, credit_hours, grade, source">
-
+  </table-plus>
+ 
+  <table-plus with="&@banner_degrees" fields="this, program_code, expected_completion, graduation_date">
   </table-plus>
   </collection:>
 
