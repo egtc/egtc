@@ -12,6 +12,8 @@ class Grade < ActiveRecord::Base
     credit_hours     :float
     course_code      :string
     course_level     :string
+    start_date       :date
+    end_date         :date
     source           :string
     timestamps
   end

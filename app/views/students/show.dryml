@@ -1,3 +1,11 @@
 <show-page>
-    <field-list: columns="2"/>
+<field-list: columns="4"/>
+  <collection: replace>
+  <table-plus with="&@grades" fields="this, term, course_code, course_level, course_name, section_number, credit_hours, grade, source">
+
+  </table-plus>
+  </collection:>
+
+  
+
 </show-page>
