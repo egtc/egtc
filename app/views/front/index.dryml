@@ -7,7 +7,22 @@
       <h1>Welcome to <app-name/></h1>
       <section class="welcome-message">
         <h3>Where your reporting dreams come true</h3>
-       
+       <p>Update 5/10/2013
+			<ul>
+				<li>Fixed bug that pulled program enrollment date instead of course enrollment date</li>
+				<li>Change Current Year calculations to be based on Term instead of date range</li>
+				<li>Added courses by program with headcounts per course and FTE</li>
+				<li>Added legacy degrees and legacy program enrollments</li>
+			</ul>
+		</p>
+		<p>Next Update
+			<ul>
+				<li>Determine from where the course FTE difference is pulling. The errors are small enough that it could be rounding</li>
+				<li>Add course sections to the courses view</li>
+				<li>Initiate Legacy Program mappings</li>
+				<li>Import and implement new master program list</li>
+			</ul>
+		</p>
 
         <% if User.count == 0 -%>
           <h3 style="margin-top: 20px;">There are no user accounts - please provide the details of the site administrator</h3>

@@ -7,9 +7,10 @@ class Course < ActiveRecord::Base
     course_code :string
     course_level :string
     program :string
-    credit_hours :decimal
+    credit_hours :float
     hashed_name :string
     head_count :string
+    fte :float
     timestamps
   end
   attr_accessible :name, :program, :program_id
