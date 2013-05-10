@@ -3,8 +3,8 @@ class BannerDegree < ActiveRecord::Base
   hobo_model # Don't put anything above this
 
   fields do
-    name                :string
-    student_number      :string
+    name                :string, :index
+    student_number      :string, :index
     expected_completion :date
     graduation_date     :date
     program_code         :string

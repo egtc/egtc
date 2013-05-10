@@ -1,13 +1,21 @@
 <show-page>
 <field-list: columns="4"/>
   <collection: replace>
-  <table-plus with="&@grades" fields="this, term, start_date, end_date, course_code, course_level, section_number, course_name, credit_hours, grade, source">
+
+ <table-plus with="&@banner_program_enrollments" fields="this, program, enrollment_status, student_level, residency, student_type">
   </table-plus>
- 
+
   <table-plus with="&@banner_degrees" fields="this, program_code, expected_completion, graduation_date">
   </table-plus>
-  </collection:>
 
+  <table-plus with="&@grades" fields="this, term, start_date, end_date, course_code, course_level, section_number, course_name, credit_hours, grade, source">
+  </table-plus>
+
+
+ 
+
+ 
+  </collection:>
   
 
 </show-page>

@@ -4,6 +4,10 @@ class Course < ActiveRecord::Base
 
   fields do
     name :string
+    course_code :string
+    course_level :string
+    program :string
+    credit_hours :decimal
     timestamps
   end
   attr_accessible :name, :program, :program_id

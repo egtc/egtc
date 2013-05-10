@@ -3,7 +3,7 @@ class Program < ActiveRecord::Base
   hobo_model # Don't put anything above this
 
   fields do
-    title :string
+    title :string, :index
     courses_count :integer, :default => 0, :null => false
     headcount_2011 :integer 
     headcount_2012 :integer 
