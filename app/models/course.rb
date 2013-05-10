@@ -8,6 +8,8 @@ class Course < ActiveRecord::Base
     course_level :string
     program :string
     credit_hours :decimal
+    hashed_name :string
+    head_count :string
     timestamps
   end
   attr_accessible :name, :program, :program_id
