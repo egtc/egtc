@@ -6,7 +6,8 @@
     <header class="content-header hero-unit">
       <h1>Welcome to <app-name/></h1>
       <section class="welcome-message">
-        <h3>Where your reporting dreams come true</h3>
+        <h2>Where your reporting dreams come true</h2>
+		<h2>Updates</h2>
        <p>Update 5/10/2013
 			<ul>
 				<li>Fixed bug that pulled program enrollment date instead of course enrollment date</li>
@@ -22,6 +23,7 @@
 				<li>Initiate Legacy Program mappings</li>
 				<li>Import and implement new master program list</li>
 			</ul>
+			If you don't see your issue listed, please email support@emilygriffith.edu
 		</p>
 
         <% if User.count == 0 -%>
