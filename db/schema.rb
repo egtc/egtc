@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130510040725) do
+ActiveRecord::Schema.define(:version => 20130703201320) do
 
   create_table "banner_degrees", :force => true do |t|
     t.string   "name"
@@ -58,13 +58,25 @@ ActiveRecord::Schema.define(:version => 20130510040725) do
     t.string   "course_code"
     t.string   "course_level"
     t.string   "program"
-    t.float    "credit_hours"
+    t.float    "credit_hours", :limit => 5
     t.string   "hashed_name"
     t.string   "head_count"
-    t.float    "fte"
+    t.float    "fte",          :limit => 6
   end
 
   add_index "courses", ["program_id"], :name => "index_courses_on_program_id"
+
+  create_table "ftes", :force => true do |t|
+    t.string   "term"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "resident_status"
+    t.float    "fte"
+    t.integer  "school_id"
+    t.string   "academic_year"
+  end
+
+  add_index "ftes", ["school_id"], :name => "index_ftes_on_school_id"
 
   create_table "grades", :force => true do |t|
     t.string   "term"

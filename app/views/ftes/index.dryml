@@ -1,0 +1,10 @@
+<index-page>
+  
+	<collection: replace>
+
+	 	<table-plus with="&@ftes" fields="academic_year, term, resident_status, fte">
+	  	</table-plus>
+
+	 </collection:>
+
+</index-page>

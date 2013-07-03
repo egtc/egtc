@@ -8,6 +8,14 @@
       <section class="welcome-message">
         <h2>Where your reporting dreams come true</h2>
 		<h2>Updates</h2>
+<index-page>
+			<collection: replace>
+			 	<table-plus with="&@ftes" fields="term, resident_headcount, resident_credit_hours, resident_FTE, nonresident_headcount, nonresident_fte, other_headcount, other_credit_hours, other_fte">
+			  	</table-plus>
+			 </collection:>
+</index-page>
+
+
        <p>Update 5/10/2013
 			<ul>
 				<li>Fixed bug that pulled program enrollment date instead of course enrollment date</li>

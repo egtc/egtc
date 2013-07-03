@@ -7,9 +7,10 @@ class School < ActiveRecord::Base
     colleges_count :integer, :default => 0, :null => false
     timestamps
   end
-  attr_accessible :name, :colleges
+  attr_accessible :name, :colleges, :academic_year, :term, :resident_status, :fte
   has_many :colleges, :dependent => :destroy, :inverse_of => :school
-  children :colleges
+  has_many :ftes, :dependent => :destroy, :inverse_of => :school
+  children :colleges, :ftes
 
   # --- Permissions --- #
 
