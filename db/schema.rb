@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130703201320) do
+ActiveRecord::Schema.define(:version => 20130722192425) do
 
   create_table "banner_degrees", :force => true do |t|
     t.string   "name"
@@ -62,9 +62,11 @@ ActiveRecord::Schema.define(:version => 20130703201320) do
     t.string   "hashed_name"
     t.string   "head_count"
     t.float    "fte",          :limit => 6
+    t.integer  "room_id"
   end
 
   add_index "courses", ["program_id"], :name => "index_courses_on_program_id"
+  add_index "courses", ["room_id"], :name => "index_courses_on_room_id"
 
   create_table "ftes", :force => true do |t|
     t.string   "term"
@@ -98,6 +100,16 @@ ActiveRecord::Schema.define(:version => 20130703201320) do
 
   add_index "grades", ["student_id"], :name => "index_grades_on_student_id"
 
+  create_table "locations", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "programs", :force => true do |t|
     t.string   "title"
     t.integer  "courses_count",                :default => 0, :null => false
@@ -116,6 +128,16 @@ ActiveRecord::Schema.define(:version => 20130703201320) do
   end
 
   add_index "programs", ["college_id"], :name => "index_programs_on_college_id"
+
+  create_table "rooms", :force => true do |t|
+    t.string   "name"
+    t.integer  "capacity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "location_id"
+  end
+
+  add_index "rooms", ["location_id"], :name => "index_rooms_on_location_id"
 
   create_table "schools", :force => true do |t|
     t.string   "name"

@@ -13,8 +13,11 @@ class Course < ActiveRecord::Base
     fte :float
     timestamps
   end
-  attr_accessible :name, :program, :program_id
+  attr_accessible :name, :program, :program_id, :room
   belongs_to :program, :inverse_of => :courses, :counter_cache => true
+  belongs_to :room, :inverse_of => :courses, :counter_cache => true
+  
+
 
   # --- Permissions --- #
 
