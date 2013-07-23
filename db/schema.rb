@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130722192425) do
+ActiveRecord::Schema.define(:version => 20130723173224) do
 
   create_table "banner_degrees", :force => true do |t|
     t.string   "name"
@@ -39,6 +39,12 @@ ActiveRecord::Schema.define(:version => 20130722192425) do
   end
 
   add_index "banner_program_enrollments", ["student_id"], :name => "index_banner_program_enrollments_on_student_id"
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "colleges", :force => true do |t|
     t.string   "name"
@@ -100,6 +106,19 @@ ActiveRecord::Schema.define(:version => 20130722192425) do
 
   add_index "grades", ["student_id"], :name => "index_grades_on_student_id"
 
+  create_table "items", :force => true do |t|
+    t.string   "name"
+    t.string   "serial_number"
+    t.string   "asset_tag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "room_id"
+    t.integer  "source_id"
+  end
+
+  add_index "items", ["room_id"], :name => "index_items_on_room_id"
+  add_index "items", ["source_id"], :name => "index_items_on_source_id"
+
   create_table "locations", :force => true do |t|
     t.string   "name"
     t.string   "address"
@@ -144,6 +163,13 @@ ActiveRecord::Schema.define(:version => 20130722192425) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "colleges_count", :default => 0, :null => false
+  end
+
+  create_table "sources", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "students", :force => true do |t|

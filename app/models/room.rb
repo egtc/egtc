@@ -7,8 +7,9 @@ class Room < ActiveRecord::Base
     capacity :integer
     timestamps
   end
-  attr_accessible :name, :capacity, :course_id, :location
+  attr_accessible :name, :capacity, :course_id, :location, :item, :item_id
   has_many :courses, :dependent => :destroy, :inverse_of => :room
+  has_many :items, :dependent => :destroy, :inverse_of => :room
   belongs_to :location, :inverse_of => :rooms, :counter_cache => true
   
   children :courses
