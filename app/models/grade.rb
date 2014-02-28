@@ -15,9 +15,12 @@ class Grade < ActiveRecord::Base
     start_date       :date
     end_date         :date
     source           :string
+    crn              :string
+    flag_duplicate   :boolean
+    comments         :text
     timestamps
   end
-  attr_accessible :name, :term, :course_name, :section_number, :grade_definition, :grade, :credit_hours, :course_code, :course_level
+  attr_accessible :name, :term, :course_name, :section_number, :grade_definition, :grade, :credit_hours, :course_code, :course_level, :crn, :flag_duplicate, :comments
   belongs_to :student
   # --- Permissions --- #
 

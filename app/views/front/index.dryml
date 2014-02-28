@@ -15,6 +15,25 @@
 			 </collection:>
 </index-page>
 
+		<p>Known Issues
+			<ul>
+				<li>Program mappings to new program structure has not been verified</li>
+				<li>Clean up on views needed to get rid of sidebars and duplicate pagination</li>
+			</ul>
+		</p>
+		<p>Update 7/8/2013
+			<ul>
+				<li>Changed calculation for FTE to term</li>
+				<li>Added FTE by resident/non-resident/term</li>
+				<li>Associated FTE to Schools</li>
+				<li>Pushed user function to grab "Fee Category" if Residency status is null or blank on import and data transfer.</li>
+				<li>Updated course headcount method</li>
+				<li>Re-mapped programs</li>
+				<li>Import and implement new master program list</li>
+				<li>Migrated import and generation updates to EGTCDB and test environment</li>
+			</ul>
+			
+		</p>
 
        <p>Update 5/10/2013
 			<ul>
@@ -24,15 +43,8 @@
 				<li>Added legacy degrees and legacy program enrollments</li>
 			</ul>
 		</p>
-		<p>Next Update
-			<ul>
-				<li>Determine from where the course FTE difference is pulling. The errors are small enough that it could be rounding</li>
-				<li>Add course sections to the courses view</li>
-				<li>Initiate Legacy Program mappings</li>
-				<li>Import and implement new master program list</li>
-			</ul>
-			If you don't see your issue listed, please email support@emilygriffith.edu
-		</p>
+		If you don't see your issue listed, please email support@emilygriffith.edu
+
 
         <% if User.count == 0 -%>
           <h3 style="margin-top: 20px;">There are no user accounts - please provide the details of the site administrator</h3>

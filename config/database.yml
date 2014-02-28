@@ -14,7 +14,7 @@ development:
   reconnect: false
   database: egtc_development
   pool: 5
-  username: root
+  username: cjones
   password: frgd0gfrgd0g
   socket: /tmp/mysql.sock
 
